@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Frame</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+<div class="w-full ctr">
+    <div class="h-auto lg:h-[400px] relative">
+        <img class="img absolute top-0 left-0 w-full h-full" src="./assets/bg-kontakt.jpg" alt="tlo" />
+        <div class="w relative z-10 pt-8 lg:pt-12">
+            <div class="flex justify-between items-center">
+                <a href="/"
+                   class="w-24 lg:w-[300px]">
+                    <img class="img" src="./assets/logo.svg" alt="logo" />
+                </a>
+
+                <div class="flex justify-start items-center">
+
+                </div>
+
+                <a href="mailto:kontakt@smartframe.de"
+                   class="bg-[#D0F205] w-24 lg:w-[120px] h-10 lg:h-12 rounded-full flex justify-center items-center font-bold text-sm lg:text-base">
+                    Kontakt
+                </a>
+            </div>
+
+            <div class="flex flex-col lg:flex-row justify-between items-center mt-10 lg:mt-6">
+                <div>
+                    <h3 class="font-bold uppercase text-white text-lg lg:text-2xl mb-4">
+                        Kontakt
+                    </h3>
+                    <p class="text-white max-w-[400px] text-sm lg:text-base">
+                        Du hast eine Frage oder möchtest eine unserer Dienstleistungen bestellen?
+                        Schreib uns, ruf an oder komm auf einen Kaffee vorbei!
+                    </p>
+                </div>
+
+                <figure class="max-w-[80vw] w-[450px] rounded-xl overflow-hidden translate-y-[50px] xl:mr-[120px]">
+                    <img class="img" src="./assets/kontakt-image.png" alt="kontakt" />
+                </figure>
+            </div>
+        </div>
+    </div>
+
+    <div class="w--narrow mt-20">
+        <div class="contact__main flex">
+            <div class="contact__main__left">
+                <a href="tel:+4901723477621" class="contact__main__left__item flex flex--start">
+                    <img class="img" src="./assets/telephone.svg" alt="phone-number" />
+                    01723477621
+                </a>
+                <a href="mailto:kontakt@smartframe.de" class="contact__main__left__item flex flex--start">
+                    <img class="img" src="./assets/email.svg" alt="email" />
+                    kontakt@smartframe.de
+                </a>
+                <div class="contact__main__left__item flex flex--start">
+                    <img class="img" src="./assets/location-pin.svg" alt="location" />
+                    Langenberger Str. 141,<br/>
+                    42551 Velbert
+                </div>
+            </div>
+            <div class="contact__main__right">
+                <form action="send_email.php" method="POST">
+                    <label class="label">
+                        Vorname und Nachname:
+                        <input class="input" name="name" />
+                    </label>
+                    <label class="label">
+                        E-Mail-Adresse:
+                        <input class="input" name="email" />
+                    </label>
+                    <label class="label">
+                        Nachricht:
+                        <textarea class="input input--textarea" name="message">
+
+                        </textarea>
+                    </label>
+                    <button class="btn btn--submit">
+                        Send
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="w">
+        <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=7.057160139083863%2C51.33755609466935%2C7.071322202682496%2C51.343681894745&amp;layer=mapnik&amp;marker=51.34061909704347%2C7.064241170883179"
+                style="border: 1px solid black"></iframe>
+    </div>
+
+
+    <footer class="bg-[#18161B] py-10 lg:py-20">
+        <div class="w flex flex-col lg:flex-row justify-between items-start">
+            <div>
+                <a href="#"
+                   class="w-[220px] block mb-12">
+                    <img class="w-full" src="./assets/logo.svg" alt="logo" />
+                </a>
+
+                <a href="tel:+4901723477621" class="contact__main__left__item flex flex--start text-white-imp font-bold text-base">
+                    <img class="filter img" src="./assets/telephone.svg" alt="phone-number" />
+                    +49 01723477621
+                </a>
+                <a href="mailto:kontakt@smartframe.de" class="contact__main__left__item flex flex--start text-white-imp font-bold text-base">
+                    <img class="img filter" src="./assets/email.svg" alt="email" />
+                    kontakt@smartframe.de
+                </a>
+                <div class="contact__main__left__item flex flex--start text-white-imp font-bold text-base">
+                    <img class="img filter" src="./assets/location-pin.svg" alt="location" />
+                    Langenberger Str. 141,<br/>
+                    42551 Velbert
+                </div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-4 justify-end items-start">
+                <div class="bg-[#202020] rounded-2xl py-10 px-8 flex flex-col justify-start items-start gap-4">
+                    <a href="#" class="text-white font-bold text-sm lg:text-base">Startseite</a>
+                    <a href="#" class="text-white font-bold text-sm lg:text-base">Dienstleistungen</a>
+                    <a href="#" class="text-white font-bold text-sm lg:text-base">Smart Frame Rahmen</a>
+                    <a href="#" class="text-white font-bold text-sm lg:text-base">Messestände</a>
+                    <a href="#" class="text-white font-bold text-sm lg:text-base">Referenzen</a>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <div class="bg-[#202020] rounded-2xl py-10 px-8 flex flex-col justify-start items-start gap-4">
+                        <a href="#" class="text-white text-sm">Datenschutzerklärung</a>
+                        <a href="#" class="text-white text-sm">Impressum</a>
+                    </div>
+
+                    <div class="w-full bg-[#202020] rounded-2xl py-10 px-8 flex flex-col justify-center items-center gap-4">
+                        <a href="#" class="flex justify-start items-center gap-3 text-white text-lg font-bold">
+                            Kontakt
+                            <img class="img--arrow filter" src="./assets/arrow-long-black.svg" alt="arrow" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
