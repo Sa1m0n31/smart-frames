@@ -14,76 +14,104 @@
             <div class="flex justify-between items-center">
                 <div class="flex justify-start items-center gap-4 lg:gap-12">
                     <a href="/"
-                       class="w-24 lg:w-[250px]">
+                       class="w-24 xl:w-[250px]">
                         <img class="img" src="./assets/logo.svg" alt="logo" />
                     </a>
 
-                    <div class="flex justify-start items-center gap-3 lg:gap-10 bg-[#21221C] h-10 lg:h-12 rounded-full px-10">
-                        <a href="" class="text-white font-bold text-base">
+                    <div class="hidden lg:flex justify-start items-center gap-3 lg:gap-10 bg-[#21221C] h-10 lg:h-12 rounded-full px-10">
+                        <a href="" class="text-white font-bold text-xs xl:text-base">
                             Usługi
                         </a>
-                        <a href="" class="text-white font-bold text-base">
+                        <a href="" class="text-white font-bold text-xs xl:text-base">
                             Ramki
                         </a>
-                        <a href="" class="text-white font-bold text-base">
+                        <a href="" class="text-white font-bold text-xs xl:text-base">
                             Stoiska targowe
                         </a>
-                        <a href="" class="text-white font-bold text-base">
+                        <a href="" class="text-white font-bold text-xs xl:text-base">
                             Realizacje
                         </a>
                     </div>
                 </div>
 
-                <div class="flex justify-end items-center gap-4">
-                    <!-- TODO: add language picker -->
+                <div class="hidden lg:flex justify-end items-center gap-4">
+<!--                    <div class="lgPicker">-->
+<!--                        -->
+<!--                    </div>-->
 
                     <a href="mailto:kontakt@smartframe.de"
-                       class="bg-[#D0F205] w-24 lg:w-[120px] h-10 lg:h-12 rounded-full flex justify-center items-center font-bold text-sm lg:text-base">
+                       class="bg-white text-black w-24 lg:w-[120px] h-10 lg:h-12 rounded-full flex justify-center items-center font-bold text-xs xl:text-base">
                         Kontakt
+                    </a>
+                </div>
+
+                <button class="header__menuBtn lg:hidden" onclick="openMenu()">
+                    <img class="img" src="./assets/menu.svg" alt="menu" />
+                </button>
+                <div class="mobileMenu">
+                    <button class="mobileMenu__close filter" onclick="closeMenu()">
+                        &times;
+                    </button>
+
+                    <div class="mobileMenu__header">
+                        <img class="w-24" src="./assets/logo.svg" alt="logo" />
+                    </div>
+
+                    <a href="/" class="header__menu__item text-white">
+                        Usługi
+                    </a>
+                    <a href="/" class="header__menu__item text-white">
+                        Ramki
+                    </a>
+                    <a href="/" class="header__menu__item text-white">
+                        Stoiska targowe
+                    </a>
+                    <a href="/" class="header__menu__item text-white">
+                        Realizacje
                     </a>
                 </div>
             </div>
         </div>
 
-        <div class="w relative mt-20 flex justify-between items-center gap-4 lg:gap-16 pb-28">
-            <div class="w-2/5">
-                <h1 class="text-white font-bold text-4xl max-w-[400px]">
+        <div class="w relative mt-8 lg:mt-20 flex flex-col lg:flex-row justify-between items-center gap-12 lg:gap-16 pb-28">
+            <div class="w-full lg:w-2/5 flex flex-col justify-center items-center lg:block">
+                <h1 class="text-white font-bold text-3xl lg:text-4xl max-w-[400px] text-center lg:text-left">
                     Modułowe ramki Smart Frame
                 </h1>
-                <h2 class="text-white font-normal text-lg mt-5 mb-10 max-w-[400px]">
+                <h2 class="text-white font-normal text-base lg:text-lg mt-5 mb-10 max-w-[400px] text-center lg:text-left">
                     Idealne do budowy stoisk targowych, wyposażeń sklepowych oraz reklamy.
                 </h2>
-                <div class="flex justify-start items-center gap-4">
+                <div class="flex flex-col xl:flex-row justify-start items-center lg:items-start xl:items-center gap-4">
                     <a href="mailto:smartframe@de.pl"
-                       class="bg-[#D6F905] h-12 rounded-full flex justify-between items-center gap-8 text-black uppercase text-sm py-2 pl-12 pr-2 font-medium">
+                       class="btn--arrow bg-[#D6F905] h-12 rounded-full flex justify-between items-center gap-8 text-black uppercase text-xs 2xl:text-sm py-2 pl-12 pr-2 font-medium">
                         Zamów
                         <img class="h-full w-auto" src="./assets/arrow-black.svg" alt="arrow" />
                     </a>
                     <a href=""
-                       class="bg-black border border-white h-12 rounded-full flex justify-center items-center text-white uppercase text-sm px-8">
+                       class="bg-black border border-white h-12 rounded-full flex justify-center items-center text-white uppercase text-xs 2xl:text-sm px-8">
                         Dowiedz się więcej
                     </a>
                 </div>
             </div>
-            <div class="w-3/5 rounded-[20px] overflow-hidden">
-                <video class="w-full"
-                       muted
-                       autoplay
-                       src="./assets/main.mp4">
+            <div class="w-full lg:w-3/5 h-[400px] rounded-[20px] overflow-hidden bg-white">
+<!--                <video class="w-full"-->
+<!--                       muted-->
+<!--                       autoplay-->
+<!--                       src="./assets/main.mp4">-->
 
-                </video>
+<!--                </video>-->
             </div>
         </div>
     </div>
 
     <section class="w py-20">
-        <h3 class="flex justify-center items-center gap-6 uppercase text-black font-bold text-4xl mb-10">
+        <h3 class="flex justify-center items-center gap-6 uppercase text-black font-bold text-2xl lg:text-4xl mb-10">
             <img class="w-6 h-auto" src="./assets/arrow-header.svg" alt="arrow" />
 
             Co robimy
         </h3>
 
-        <div class="flex justify-between items-center gap-3">
+        <div class="flex flex-col lg:flex-row justify-between items-center gap-3">
             <a class="bg-black rounded-2xl p-4 tile" href="">
                 <div class="flex justify-between items-center">
                     <span class="rounded-full w-10 h-10 bg-[#21221C] text-white flex justify-center items-center text-xl">
@@ -177,7 +205,7 @@
 
         <div class="flex justify-end items-center mt-8">
             <a href=""
-               class="border-black border rounded-full h-12 px-10 flex justify-center items-center gap-2 text-black text-lg font-bold">
+               class="btn--arrow border-black border rounded-full h-12 px-10 flex justify-center items-center gap-2 text-black text-lg font-bold">
                 Pokaż więcej
 
                 <img class="w-8" src="./assets/arrow-long-black.svg" alt="arrow" />
@@ -186,14 +214,14 @@
     </section>
 
     <section class="w py-20">
-        <h3 class="flex justify-center items-center gap-6 uppercase text-black font-bold text-4xl mb-20">
+        <h3 class="flex justify-center items-center gap-6 uppercase text-black font-bold text-lg lg:text-4xl mb-20">
             <img class="w-6 h-auto" src="./assets/arrow-header.svg" alt="arrow" />
 
             Przykładowe branże
         </h3>
 
-        <div class="flex gap-8 justify-between items-center">
-            <div class="w-1/3">
+        <div class="flex flex-col lg:flex-row gap-8 justify-between items-center">
+            <div class="w-full lg:w-1/3 order-10 lg:-order-1">
                 <button onclick="selectTab(0)"
                         class="w-full flex justify-between items-center text-black font-bold text-lg py-4 border-b border-black">
                     <span>Witryny sklepowe</span>
@@ -221,7 +249,7 @@
                 </button>
             </div>
 
-            <div class="w-2/3">
+            <div class="w-full lg:w-2/3">
                 <figure class="w-full bg-black rounded-[20px] overflow-hidden relative py-10">
                     <img class="tabs__image w-[95%] h-auto relative mx-auto" src="./assets/witryny-sklepowe.jpg" alt="img" />
                     <img class="tabs__image w-[95%] h-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" src="./assets/witryny-sklepowe.jpg" alt="img" />
@@ -234,13 +262,13 @@
     </section>
 
     <section class="w py-20">
-        <h3 class="flex justify-center items-center gap-6 uppercase text-black font-bold text-4xl mb-20">
+        <h3 class="flex justify-center items-center gap-6 uppercase text-black font-bold text-2xl lg:text-4xl mb-20">
             <img class="w-6 h-auto" src="./assets/arrow-header.svg" alt="arrow" />
 
             4 powody
         </h3>
 
-        <div class="grid gap-4 grid-cols-1 md:grid-cols-2 max-w-[600px] mx-auto">
+        <div class="grid gap-4 grid-cols-1 md:grid-cols-2 max-w-[600px] mx-auto justify-items-center">
             <div class="box bg-[#0C0C0C] rounded-xl p-6">
                 <div class="flex gap-2 items-center justify-start">
                     <span class="flex justify-center items-center border border-white w-10 h-10 rounded-full text-white font-bold text-lg">
@@ -324,28 +352,28 @@
     </section>
 
     <section class="w--narrow py-20">
-        <h3 class="flex justify-center items-center gap-6 uppercase text-black font-bold text-4xl mb-20">
+        <h3 class="flex justify-center items-center gap-6 uppercase text-black font-bold text-lg lg:text-4xl mb-20">
             <img class="w-6 h-auto" src="./assets/arrow-header.svg" alt="arrow" />
 
             Sprawdź rozwiązania
         </h3>
 
-        <div class="flex flex-col lg:flex-row justify-center items-start gap-4">
-            <div class="bg-[#0C0C0C] rounded-[20px] p-5">
-                <div class="flex justify-between items-center">
-                    <h5 class="text-white font-bold text-lg">
+        <div class="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-4">
+            <div class="bg-[#0C0C0C] rounded-[20px] p-5 max-w-[400px]">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-3">
+                    <h5 class="text-white font-bold text-lg text-center md:text-left">
                         Ramy<br/>
                         SMART FRAME
                     </h5>
 
                     <a href="mailto:smartframe@de.pl"
-                       class="bg-[#D6F905] h-12 rounded-full flex justify-between items-center gap-8 text-black uppercase text-sm py-2 pl-12 pr-2 font-medium">
+                       class="btn--arrow bg-[#D6F905] h-12 rounded-full flex justify-between items-center gap-8 text-black uppercase text-sm py-2 pl-12 pr-2 font-medium">
                         Sprawdź
                         <img class="h-full w-auto" src="./assets/arrow-black.svg" alt="arrow" />
                     </a>
                 </div>
 
-                <p class="text-white text-sm mt-4 mb-6">
+                <p class="text-white text-sm mt-4 mb-6 text-center md:text-left">
                     Smart Frame to innowacyjny system z lekkimi aluminiowymi ramionami i elastyczną tkaniną,
                     umożliwiający prosty montaż i szybką zmianę wydruku.
                 </p>
@@ -353,21 +381,21 @@
                 <img class="w-full" src="./assets/solution1.png" alt="solution" />
             </div>
 
-            <div class="bg-[#0C0C0C] rounded-[20px] p-5">
-                <div class="flex justify-between items-center">
-                    <h5 class="text-white font-bold text-lg">
+            <div class="bg-[#0C0C0C] rounded-[20px] p-5 max-w-[400px]">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-3">
+                    <h5 class="text-white font-bold text-lg text-center md:text-left">
                         Modułowe<br/>
                         Stoiska Targowe
                     </h5>
 
                     <a href="mailto:smartframe@de.pl"
-                       class="bg-[#D6F905] h-12 rounded-full flex justify-between items-center gap-8 text-black uppercase text-sm py-2 pl-12 pr-2 font-medium">
+                       class="btn--arrow bg-[#D6F905] h-12 rounded-full flex justify-between items-center gap-8 text-black uppercase text-sm py-2 pl-12 pr-2 font-medium">
                         Sprawdź
                         <img class="h-full w-auto" src="./assets/arrow-black.svg" alt="arrow" />
                     </a>
                 </div>
 
-                <p class="text-white text-sm mt-4 mb-6">
+                <p class="text-white text-sm mt-4 mb-6 text-center md:text-left">
                     Wygodne systemy wystawiennicze - od projektu po realizację. Twórz niepowtarzalne stoiska
                     dopasowane do indywidualnych potrzeb.
                 </p>
@@ -378,26 +406,26 @@
     </section>
 
     <section class="w py-20">
-        <h3 class="flex justify-center items-center gap-6 uppercase text-black font-bold text-4xl mb-20">
+        <h3 class="flex justify-center items-center gap-6 uppercase text-black font-bold text-2xl lg:text-4xl mb-20">
             <img class="w-6 h-auto" src="./assets/arrow-header.svg" alt="arrow" />
 
             Pytania?
         </h3>
 
-        <div class="relative w-full h-64 rounded-[20px] overflow-hidden">
-            <video class="relative"
+        <div class="relative w-full h-[400px] lg:h-64 rounded-[20px] overflow-hidden">
+            <video class="relative contactVideo"
                    src="./assets/video-contact.mp4" autoplay muted loop>
 
             </video>
 
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[20px] py-10 px-20 bg-white flex flex-col justify-center items-center">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[20px] py-10 px-8 lg:px-20 bg-white flex flex-col justify-center items-center">
                 <p class="text-black text-center mb-3 font-bold">
                     <span class="block">Chcesz o coś zapytac?</span>
                     <span class="block">Jesteśmy dla Ciebie</span>
                 </p>
 
                 <a href="mailto:smartframe@de.pl"
-                   class="bg-black h-10 rounded-full flex justify-between items-center gap-8 text-white font-bold uppercase text-sm py-2 pl-12 pr-2">
+                   class="btn--arrow bg-black h-10 rounded-full flex justify-between items-center gap-8 text-white font-bold uppercase text-sm py-2 pl-4 lg:pl-12 pr-2 w-[150px] lg:w-auto">
                     Kontakt
                     <img class="h-full w-auto" src="./assets/arrow-green.svg" alt="arrow" />
                 </a>
@@ -444,7 +472,7 @@
                     </div>
 
                     <div class="w-full bg-[#202020] rounded-2xl py-10 px-8 flex flex-col justify-center items-center gap-4">
-                        <a href="#" class="flex justify-start items-center gap-3 text-white text-lg font-bold">
+                        <a href="#" class="btn--arrow flex justify-start items-center gap-3 text-white text-lg font-bold">
                             Kontakt
                             <img class="img--arrow filter" src="./assets/arrow-long-black.svg" alt="arrow" />
                         </a>
