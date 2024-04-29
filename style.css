@@ -273,10 +273,6 @@ button, a {
     margin-top: 15px;
 }
 
-.portfolio {
-    padding: 100px 0;
-}
-
 .header {
     text-transform: uppercase;
     font-weight: 900;
@@ -1388,4 +1384,21 @@ label > span {
 
 .btn--arrow:hover > img {
     transform: translateX(3px);
+}
+
+.mobility--header,
+.mobility--description {
+    display: block;
+    text-align: left;
+}
+
+.mobility--video {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.mobility--video {
+    visibility: visible;
 }
