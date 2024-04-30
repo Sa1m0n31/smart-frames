@@ -35,16 +35,16 @@
 
                 <div class="hidden lg:flex justify-start items-center gap-3 lg:gap-10 bg-[#21221C] h-10 lg:h-12 rounded-full px-10">
                     <a href="<?php echo get_page_link(get_page_by_title('Ramki')->ID); ?>" class="text-white font-bold text-xs xl:text-base">
-                        Usługi
+                        Dienstleistungen
                     </a>
                     <a href="<?php echo get_page_link(get_page_by_title('Ramki')->ID); ?>" class="text-white font-bold text-xs xl:text-base">
-                        Ramki
+                        Smart Frame Rahmen
                     </a>
                     <a href="<?php echo get_page_link(get_page_by_title('Stoiska targowe')->ID); ?>" class="text-white font-bold text-xs xl:text-base">
-                        Stoiska targowe
+                        Messestände
                     </a>
                     <a href="<?php echo get_page_link(get_page_by_title('Realizacje')->ID); ?>" class="text-white font-bold text-xs xl:text-base">
-                        Realizacje
+                        Referenzen
                     </a>
                 </div>
             </div>
@@ -73,16 +73,16 @@
             </div>
 
             <a href="<?php echo get_page_link(get_page_by_title('Usługi')->ID); ?>" class="header__menu__item text-white">
-                Usługi
+                Dienstleistungen
             </a>
             <a href="<?php echo get_page_link(get_page_by_title('Ramki')->ID); ?>" class="header__menu__item text-white">
-                Ramki
+                Smart Frame Rahmen
             </a>
             <a href="<?php echo get_page_link(get_page_by_title('Stoiska targowe')->ID); ?>" class="header__menu__item text-white">
-                Stoiska targowe
+                Messestände
             </a>
             <a href="<?php echo get_page_link(get_page_by_title('Realizacje')->ID); ?>" class="header__menu__item text-white">
-                Realizacje
+                Referenzen
             </a>
         </div>
     </div>

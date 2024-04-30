@@ -2,19 +2,18 @@
 get_header();
 ?>
 
-<div class="flex flex-col lg:flex-row justify-between items-center mt-10 lg:mt-1">
+<div class="flex flex-col lg:flex-row justify-between items-center mt-10 lg:mt-8">
     <div>
         <h3 class="font-bold uppercase text-white text-lg lg:text-2xl mb-4">
-            Kontakt
+            <?php echo get_field('naglowek_1'); ?>
         </h3>
         <p class="text-white max-w-[400px] text-sm lg:text-base">
-            Du hast eine Frage oder möchtest eine unserer Dienstleistungen bestellen?
-            Schreib uns, ruf an oder komm auf einen Kaffee vorbei!
+            <?php echo get_field('tekst_1'); ?>
         </p>
     </div>
 
     <figure class="max-w-[80vw] w-[450px] rounded-xl overflow-hidden translate-y-[50px] xl:mr-[120px]">
-        <img class="img" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/kontakt-image.png" alt="kontakt" />
+        <img class="img" src="<?php echo get_field('zdjecie_1'); ?>" alt="kontakt" />
     </figure>
 </div>
 </div>

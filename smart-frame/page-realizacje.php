@@ -2,19 +2,18 @@
 get_header();
 ?>
 
-<div class="flex flex-col lg:flex-row justify-between items-center mt-10 lg:mt-1">
+<div class="flex flex-col lg:flex-row justify-between items-center mt-10 lg:mt-8">
     <div>
         <h3 class="font-bold uppercase text-white text-lg lg:text-2xl mb-4">
-            Realizacje
+            <?php echo get_field('naglowek_1'); ?>
         </h3>
         <p class="text-white max-w-[400px] text-sm lg:text-base">
-            Du hast eine Frage oder möchtest eine unserer Dienstleistungen bestellen?
-            Schreib uns, ruf an oder komm auf einen Kaffee vorbei!
+            <?php echo get_field('tekst_1'); ?>
         </p>
     </div>
 
     <figure class="max-w-[80vw] w-[450px] rounded-xl overflow-hidden translate-y-[50px] xl:mr-[120px]">
-        <img class="img" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/kontakt-image.png" alt="kontakt" />
+        <img class="img" src="<?php echo get_field('zdjecie_1'); ?>" alt="kontakt" />
     </figure>
 </div>
 </div>
@@ -40,11 +39,41 @@ get_header();
         </button>
     </div>
     <div class="w-full lg:w-3/4 grid grid-cols-1 lg:grid-cols-3 gap-4">
-        <img class="rounded-2xl portfolio portfolio--0" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/kontakt-image.png" alt="kontakt" />
-        <img class="rounded-2xl portfolio portfolio--0" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/kontakt-image.png" alt="kontakt" />
-        <img class="rounded-2xl portfolio portfolio--1" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/kontakt-image.png" alt="kontakt" />
-        <img class="rounded-2xl portfolio portfolio--1" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/kontakt-image.png" alt="kontakt" />
-        <img class="rounded-2xl portfolio portfolio--2" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/kontakt-image.png" alt="kontakt" />
+        <?php
+        $args = array(
+            'post_type' => 'Slider',
+            'posts_per_page' => 99
+        );
+
+        function get_category_id($name) {
+            switch($name) {
+                case 'Ramy Smart Frame':
+                    return 0;
+                case 'Stoiska targowe':
+                    return 1;
+                case 'Wydruki wielkoformatowe':
+                    return 2;
+                default:
+                    return 3;
+            }
+        }
+
+        $query = new WP_Query($args);
+
+        if($query->have_posts()) {
+            while($query->have_posts()) {
+                $query->the_post();
+                ?>
+
+                <img class="rounded-2xl portfolio portfolio--<?php echo get_category_id(get_field('kategoria')); ?>"
+                     src="<?php echo get_field('zdjecie'); ?>" alt="kontakt" />
+
+                <?php
+            }
+            wp_reset_postdata();
+        }
+        ?>
+
     </div>
 </div>
 

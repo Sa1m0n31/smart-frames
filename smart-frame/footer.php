@@ -35,11 +35,11 @@
 
         <div class="flex flex-col lg:flex-row gap-4 justify-end items-start">
             <div class="bg-[#202020] rounded-2xl py-10 px-8 flex flex-col justify-start items-start gap-4">
-                <a href="<?php echo get_page_link(get_page_by_title('Ramki')->ID); ?>" class="text-white font-bold text-sm lg:text-base">Startseite</a>
+                <a href="<?php echo home_url(); ?>" class="text-white font-bold text-sm lg:text-base">Startseite</a>
                 <a href="<?php echo get_page_link(get_page_by_title('Ramki')->ID); ?>" class="text-white font-bold text-sm lg:text-base">Dienstleistungen</a>
                 <a href="<?php echo get_page_link(get_page_by_title('Ramki')->ID); ?>" class="text-white font-bold text-sm lg:text-base">Smart Frame Rahmen</a>
-                <a href="<?php echo get_page_link(get_page_by_title('Ramki')->ID); ?>" class="text-white font-bold text-sm lg:text-base">Messestände</a>
-                <a href="<?php echo get_page_link(get_page_by_title('Ramki')->ID); ?>" class="text-white font-bold text-sm lg:text-base">Referenzen</a>
+                <a href="<?php echo get_page_link(get_page_by_title('Stoiska targowe')->ID); ?>" class="text-white font-bold text-sm lg:text-base">Messestände</a>
+                <a href="<?php echo get_page_link(get_page_by_title('Realizacje')->ID); ?>" class="text-white font-bold text-sm lg:text-base">Referenzen</a>
             </div>
 
             <div class="flex flex-col gap-4">

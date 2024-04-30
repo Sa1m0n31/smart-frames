@@ -179,3 +179,30 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// Add slider post type
+function smart_frame_add_slider_post_type() {
+    $supports = array(
+        'title',
+        'editor',
+        'date'
+    );
+
+    $labels = array(
+        'name' => 'Realizacje'
+    );
+
+    $args = array(
+        'labels'               => $labels,
+        'supports'             => $supports,
+        'public'               => true,
+        'capability_type'      => 'post',
+        'rewrite'              => array( 'slug' => '' ),
+        'has_archive'          => true,
+        'menu_position'        => 30,
+        'menu_icon'            => 'dashicons-welcome-view-site'
+    );
+
+    register_post_type("Slider", $args);
+}
+
+add_action("init", "smart_frame_add_slider_post_type");
