@@ -29,30 +29,30 @@
         <div class="flex justify-between items-center">
             <div class="flex justify-start items-center gap-4 lg:gap-12">
                 <a href="<?php echo home_url(); ?>"
-                   class="w-24 xl:w-[250px]">
+                   class="w-24 xl:w-[200px]">
                     <img class="img" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/logo.svg" alt="logo" />
                 </a>
 
-                <div class="hidden lg:flex justify-start items-center gap-3 lg:gap-10 bg-[#21221C] h-10 lg:h-12 rounded-full px-10">
-                    <a href="<?php echo get_page_link(get_page_by_title('Ramki')->ID); ?>" class="text-white font-bold text-xs xl:text-base">
+                <div class="hidden lg:flex justify-start items-center gap-3 lg:gap-10 bg-[#21221C] h-10 lg:h-12 rounded-full px-8">
+                    <a href="<?php echo get_page_link(get_page_by_title('Ramki')->ID); ?>" class="text-white font-bold text-[12px] xl:text-xs">
                         Dienstleistungen
                     </a>
-                    <a href="<?php echo get_page_link(get_page_by_title('Ramki')->ID); ?>" class="text-white font-bold text-xs xl:text-base">
+                    <a href="<?php echo get_page_link(get_page_by_title('Ramki')->ID); ?>" class="text-white font-bold text-[12px] xl:text-xs">
                         Smart Frame Rahmen
                     </a>
-                    <a href="<?php echo get_page_link(get_page_by_title('Stoiska targowe')->ID); ?>" class="text-white font-bold text-xs xl:text-base">
+                    <a href="<?php echo get_page_link(get_page_by_title('Stoiska targowe')->ID); ?>" class="text-white font-bold text-[12px] xl:text-xs">
                         Messestände
                     </a>
-                    <a href="<?php echo get_page_link(get_page_by_title('Realizacje')->ID); ?>" class="text-white font-bold text-xs xl:text-base">
+                    <a href="<?php echo get_page_link(get_page_by_title('Realizacje')->ID); ?>" class="text-white font-bold text-[12px] xl:text-xs">
                         Referenzen
                     </a>
                 </div>
             </div>
 
         <div class="hidden lg:flex justify-end items-center gap-4">
-            <!--                    <div class="lgPicker">-->
-            <!--                        -->
-            <!--                    </div>-->
+            <div class="lgPicker">
+                <?php echo do_shortcode('[language-switcher]'); ?>
+            </div>
 
             <a href="<?php echo get_page_link(get_page_by_title('Kontakt')->ID); ?>"
                class="bg-white text-black w-24 lg:w-[120px] h-10 lg:h-12 rounded-full flex justify-center items-center font-bold text-xs xl:text-base">

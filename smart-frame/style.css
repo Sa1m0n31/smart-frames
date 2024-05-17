@@ -88,6 +88,13 @@ button, a {
 	margin-right: auto;
 }
 
+.w--middle {
+	width: 1050px;
+	max-width: 82vw;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .w--narrow {
 	width: 960px;
 	max-width: 80vw;
@@ -1406,4 +1413,91 @@ label > span {
 
 .mobility--video {
 	visibility: visible;
+}
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: -999999;
+	visibility: hidden;
+	background: rgba(0, 0, 0, .6);
+}
+
+.lgPicker * {
+	color: #fff !important;
+	font-weight: 700 !important;
+}
+
+.trp-ls-shortcode-current-language,
+.trp-ls-shortcode-language {
+	background: #222222 !important;
+	border-radius: 24px !important;
+	border: none !important;
+}
+
+.trp-ls-shortcode-language a:hover {
+	background: #222 !important;
+}
+
+.lgPicker,
+.trp-language-switcher {
+	height: 48px !important;
+}
+
+.trp-language-switcher {
+	margin-left: 30% !important;
+}
+
+.trp-ls-shortcode-current-language {
+	height: 48px !important;
+}
+
+.trp-ls-shortcode-current-language {
+	position: relative;
+}
+
+.trp-ls-shortcode-current-language::after {
+	content: "";
+	background: url("http://smartframesolutions.de/wp-content/uploads/2024/05/down.png");
+	width: 30px;
+	height: 30px;
+	background-size: 100%;
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	transform: translateY(-50%);
+	color: #fff;
+	z-index: 99 !important;
+	visibility: visible !important;
+}
+
+.trp-language-switcher:focus .trp-ls-shortcode-current-language, .trp-language-switcher:hover .trp-ls-shortcode-current-language {
+	visibility: visible !important;
+}
+
+#trp-floater-ls {
+	display: none !important;
+}
+
+@media(max-width: 1100px) {
+	#trp-floater-ls {
+		display: block !important;
+	}
+}
+
+.carousel-title {
+	color: white;
+	font-size: 24px;
+	font-weight: 700;
+	text-align: center;
+}
+
+.absolute-carousel-title {
+	visibility: hidden;
 }

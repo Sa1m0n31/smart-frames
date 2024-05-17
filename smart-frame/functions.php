@@ -199,10 +199,151 @@ function smart_frame_add_slider_post_type() {
         'rewrite'              => array( 'slug' => '' ),
         'has_archive'          => true,
         'menu_position'        => 30,
-        'menu_icon'            => 'dashicons-welcome-view-site'
+        'menu_icon'            => 'dashicons-format-gallery'
     );
 
     register_post_type("Slider", $args);
 }
 
 add_action("init", "smart_frame_add_slider_post_type");
+
+// Add slider post type
+function smart_frame_add_stoiska_post_type() {
+    $supports = array(
+        'title',
+        'editor',
+        'date'
+    );
+
+    $labels = array(
+        'name' => 'Stoiska'
+    );
+
+    $args = array(
+        'labels'               => $labels,
+        'supports'             => $supports,
+        'public'               => true,
+        'capability_type'      => 'post',
+        'rewrite'              => array( 'slug' => '' ),
+        'has_archive'          => true,
+        'menu_position'        => 31,
+        'menu_icon'            => 'dashicons-welcome-view-site'
+    );
+
+    register_post_type("stoiska", $args);
+}
+
+add_action("init", "smart_frame_add_stoiska_post_type");
+
+// Add slider post type
+function smart_frame_add_ramy_post_type() {
+    $supports = array(
+        'title',
+        'editor',
+        'date'
+    );
+
+    $labels = array(
+        'name' => 'Ramy'
+    );
+
+    $args = array(
+        'labels'               => $labels,
+        'supports'             => $supports,
+        'public'               => true,
+        'capability_type'      => 'post',
+        'rewrite'              => array( 'slug' => '' ),
+        'has_archive'          => true,
+        'menu_position'        => 41,
+        'menu_icon'            => 'dashicons-button'
+    );
+
+    register_post_type("ramy", $args);
+}
+
+add_action("init", "smart_frame_add_ramy_post_type");
+
+
+// Add slider post type
+function smart_frame_add_montaz_post_type() {
+    $supports = array(
+        'title',
+        'editor',
+        'date'
+    );
+
+    $labels = array(
+        'name' => 'Kroki montażu'
+    );
+
+    $args = array(
+        'labels'               => $labels,
+        'supports'             => $supports,
+        'public'               => true,
+        'capability_type'      => 'post',
+        'rewrite'              => array( 'slug' => '' ),
+        'has_archive'          => true,
+        'menu_position'        => 32,
+        'menu_icon'            => 'dashicons-image-rotate-left'
+    );
+
+    register_post_type("Montaz", $args);
+}
+
+add_action("init", "smart_frame_add_montaz_post_type");
+
+// Add slider post type
+function smart_frame_add_cechy_post_type() {
+    $supports = array(
+        'title',
+        'editor',
+        'date'
+    );
+
+    $labels = array(
+        'name' => 'Cechy'
+    );
+
+    $args = array(
+        'labels'               => $labels,
+        'supports'             => $supports,
+        'public'               => true,
+        'capability_type'      => 'post',
+        'rewrite'              => array( 'slug' => '' ),
+        'has_archive'          => true,
+        'menu_position'        => 32,
+        'menu_icon'            => 'dashicons-ellipsis'
+    );
+
+    register_post_type("Cechy", $args);
+}
+
+add_action("init", "smart_frame_add_cechy_post_type");
+
+// Add slider post type
+function smart_frame_add_profile_post_type() {
+    $supports = array(
+        'title',
+        'editor',
+        'date'
+    );
+
+    $labels = array(
+        'name' => 'Profile'
+    );
+
+    $args = array(
+        'labels'               => $labels,
+        'supports'             => $supports,
+        'public'               => true,
+        'capability_type'      => 'post',
+        'rewrite'              => array( 'slug' => '' ),
+        'has_archive'          => true,
+        'menu_position'        => 43,
+        'menu_icon'            => 'dashicons-editor-underline'
+    );
+
+    register_post_type("Profile", $args);
+}
+
+add_action("init", "smart_frame_add_profile_post_type");

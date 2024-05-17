@@ -158,7 +158,7 @@ get_header();
         <div class="mt-12 lg:mt-20 bg-black mx-auto max-w-[400px] lg:max-w-none rounded-2xl py-12 px-6 flex flex-col lg:flex-row justify-between items-center gap-8">
             <div class="w-full lg:w-1/3 flex flex-col justify-between items-start">
                 <div class="flex flex-col gap-2">
-                    <button class="border-b border-[#616161] py-3 w-full" onclick="selectMobilityVideo(0)">
+                    <button class="border-b border-[#616161] py-3 w-full cursor-default">
                             <span class="mobility--header text-lg font-bold text-[#616161] pb-2">
                                 <?php echo get_field('przewaga_naglowek_1'); ?>
                             </span>
@@ -166,7 +166,7 @@ get_header();
                                 <?php echo get_field('przewaga_tekst_1'); ?>
                             </span>
                     </button>
-                    <button class="border-b border-[#616161] py-3 w-full" onclick="selectMobilityVideo(1)">
+                    <button class="border-b border-[#616161] py-3 w-full cursor-default">
                             <span class="mobility--header text-lg font-bold text-[#616161] pb-2">
                                 <?php echo get_field('przewaga_naglowek_2'); ?>
                             </span>
@@ -174,7 +174,7 @@ get_header();
                                 <?php echo get_field('przewaga_tekst_2'); ?>
                             </span>
                     </button>
-                    <button class="border-b border-[#616161] py-3 w-full" onclick="selectMobilityVideo(2)">
+                    <button class="border-b border-[#616161] py-3 w-full cursor-default">
                             <span class="mobility--header text-lg font-bold text-[#616161] pb-2">
                                 <?php echo get_field('przewaga_naglowek_3'); ?>
                             </span>
@@ -185,22 +185,22 @@ get_header();
                 </div>
 
                 <div class="flex justify-start items-center gap-2 mt-16">
-                        <span class="mobility--dot block w-16 h-4 rounded-full bg-[#D3F103]">
-
-                        </span>
-                    <span class="mobility--dot block w-16 h-4 rounded-full bg-[#616161]">
-
-                        </span>
-                    <span class="mobility--dot block w-16 h-4 rounded-full bg-[#616161]">
-
-                        </span>
+                    <span class="mobility--dot block w-16 h-2 rounded-full bg-[#616161] overflow-hidden">
+                        <span class="mobility--dot__inner block bg-[#D3F103] w-0 h-full"></span>
+                    </span>
+                    <span class="mobility--dot block w-16 h-2 rounded-full bg-[#616161] overflow-hidden">
+                        <span class="mobility--dot__inner block bg-[#D3F103] w-0 h-full"></span>
+                    </span>
+                    <span class="mobility--dot block w-16 h-2 rounded-full bg-[#616161] overflow-hidden">
+                        <span class="mobility--dot__inner block bg-[#D3F103] w-0 h-full"></span>
+                    </span>
                 </div>
             </div>
 
             <div class="w-full lg:w-2/3 h-[150px] lg:h-[400px] relative">
-                <video class="mobility--video w-full rounded-2xl h-full" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/przewaga1.mp4" playsinline autoplay muted loop></video>
-                <video class="mobility--video w-full rounded-2xl h-full" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/przewaga2.mp4" playsinline autoplay muted loop></video>
-                <video class="mobility--video w-full rounded-2xl h-full" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/przewaga3.mp4" playsinline autoplay muted loop></video>
+                <video class="mobility--video w-full rounded-2xl h-full" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/przewaga1.mp4" playsinline muted></video>
+                <video class="mobility--video w-full rounded-2xl h-full" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/przewaga2.mp4" playsinline muted></video>
+                <video class="mobility--video w-full rounded-2xl h-full" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/przewaga3.mp4" playsinline muted></video>
             </div>
         </div>
     </section>
