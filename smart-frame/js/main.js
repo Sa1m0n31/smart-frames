@@ -341,7 +341,7 @@ const allMontageElements = Array.from(document.querySelectorAll('.montage'));
 
 let currentMontageItem = 0;
 
-const updateMontage = () => {+
+const updateMontage = () => {
     const allDots = Array.from(document.querySelectorAll(`.montage--${currentMontageItem} .montageDot`));
 
     allMontageElements.forEach((item, index) => {
