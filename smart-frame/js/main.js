@@ -209,6 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('keydown', function(event) {
     if(event.key === "Escape") {
         hidePopup();
+        closePopup();
     }
 });
 
@@ -274,4 +275,108 @@ const carouselNext = () => {
     }
 
     updateCarousel();
+}
+
+// Popups
+const allPopups = Array.from(document.querySelectorAll('.profilePopup'));
+
+let currentPopup = 0;
+
+const displayPopup = (i) => {
+    const item = allPopups[i-1];
+    currentPopup = i-1;
+
+    item.style.zIndex = '999999';
+    item.style.display = 'flex';
+    item.style.visibility = 'visible';
+}
+
+const closePopup = () => {
+    allPopups.forEach((item) => {
+        item.style.zIndex = '-999999';
+        item.style.display = 'none';
+        item.style.visibility = 'hidden';
+    });
+}
+
+const changePopupCarousel = (n) => {
+    const allHeaders = Array.from(document.querySelectorAll(`.modal--${currentPopup+1} .popupCarouselHeader`));
+    const allImages = Array.from(document.querySelectorAll(`.modal--${currentPopup+1} .popupCarouselImage`));
+    const allDots = Array.from(document.querySelectorAll(`.modal--${currentPopup+1} .popupCarouselDot`));
+
+    allHeaders.forEach((item, index) => {
+        if(index === n) {
+            item.style.position = 'relative';
+            item.style.visibility = 'visible';
+        }
+        else {
+            item.style.position = 'absolute';
+            item.style.visibility = 'hidden';
+        }
+    });
+
+    allImages.forEach((item, index) => {
+        if(index === n) {
+            item.style.position = 'relative';
+            item.style.visibility = 'visible';
+        }
+        else {
+            item.style.position = 'absolute';
+            item.style.visibility = 'hidden';
+        }
+    });
+
+    allDots.forEach((item, index) => {
+        if(index === n) {
+            item.style.background = '#d6f905';
+        }
+        else {
+            item.style.background = 'white';
+        }
+    });
+}
+
+// Montage
+const allMontageElements = Array.from(document.querySelectorAll('.montage'));
+
+let currentMontageItem = 0;
+
+const updateMontage = () => {+
+    const allDots = Array.from(document.querySelectorAll(`.montage--${currentMontageItem} .montageDot`));
+
+    allMontageElements.forEach((item, index) => {
+        if(index === currentMontageItem) {
+            item.style.visibility = 'visible';
+            item.style.zIndex = '999999';
+            item.style.position = 'relative';
+        }
+        else {
+            item.style.visibility = 'hidden';
+            item.style.zIndex = '-999999';
+            item.style.position = 'absolute';
+        }
+    });
+
+    allDots.forEach((item, index) => {
+        if(index === currentMontageItem) {
+            item.style.background = '#d6f905';
+        }
+        else {
+            item.style.background = '#616161';
+        }
+    });
+}
+
+const montagePrev = () => {
+    if(currentMontageItem > 0) {
+        currentMontageItem--;
+        updateMontage();
+    }
+}
+
+const montageNext = () => {
+    if(currentMontageItem < allMontageElements.length - 1) {
+        currentMontageItem++;
+        updateMontage();
+    }
 }

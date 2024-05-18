@@ -19,14 +19,42 @@ get_header();
 </div>
 </div>
 
-<div class="w--narrow">
-    <!-- SECTION -->
+<div class="w--middle flex flex-col justify-start items-center mt-32 mb-24">
+    <h4 class="bg-[#0C0C0C] rounded-[20px] px-16 py-6 flex justify-center items-center mb-14">
+        <span class="relative carousel-title"><?php echo get_field('slider_tytul_1'); ?></span>
+        <span class="absolute invisible carousel-title"><?php echo get_field('slider_tytul_2'); ?></span>
+        <span class="absolute invisible carousel-title"><?php echo get_field('slider_tytul_3'); ?></span>
+    </h4>
 
+    <div class="flex gap-8 justify-center items-center mb-4">
+        <button class="rounded-full w-3 h-3 bg-[#D6F905] border-2 border-[#0C0C0C] carousel-dot carousel-dot-1"></button>
+        <button class="rounded-full w-3 h-3 bg-[#616161] carousel-dot carousel-dot-2"></button>
+        <button class="rounded-full w-3 h-3 bg-[#616161] carousel-dot carousel-dot-2"></button>
+    </div>
+
+    <div class="flex justify-between items-center gap-4 lg:gap-12 w--middle">
+        <button class="w-14 min-w-[24px] bg-transparent border-none" onclick="carouselPrev()">
+            <img class="w-full" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/arrow-prev.svg" alt="prev" />
+        </button>
+
+        <figure class="bg-[#0C0C0C] rounded-[20px] p-6">
+            <img class="w-full h-auto relative carousel-image" src="<?php echo get_field('slider_zdjecie_1') ?>" alt="carousel" />
+            <img class="w-full h-auto absolute invisible carousel-image" src="<?php echo get_field('slider_zdjecie_2') ?>" alt="carousel" />
+            <img class="w-full h-auto absolute invisible carousel-image" src="<?php echo get_field('slider_zdjecie_3') ?>" alt="carousel" />
+        </figure>
+
+        <button class="w-14 min-w-[24px] bg-transparent border-none rotate-180" onclick="carouselNext()">
+            <img class="w-full" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/arrow-prev.svg" alt="prev" />
+        </button>
+    </div>
+</div>
+
+<div class="w--narrow">
     <section class="py-12 lg:py-24">
         <h3 class="flex justify-center items-center gap-6 uppercase text-black font-bold text-2xl lg:text-4xl mb-10">
             <img class="w-6 h-auto" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/arrow-header.svg" alt="arrow" />
 
-            <?php echo get_field('naglowek_sekcja_1'); ?>
+            Atuty
         </h3>
 
         <div class="grid gap-6 grid-cols-1 lg:grid-cols-2">
@@ -37,7 +65,7 @@ get_header();
 
                 <div class="flex flex-col gap-1 justify-start items-start">
                     <h5 class="text-white text-base font-normal">
-                        <?php echo get_field('atuty_naglowek_1'); ?>
+                        <?php echo get_field('atuty_tytul_1'); ?>
                     </h5>
                     <p class="text-white text-xs">
                         <?php echo get_field('atuty_tekst_1'); ?>
@@ -51,7 +79,7 @@ get_header();
 
                 <div class="flex flex-col gap-1 justify-start items-start">
                     <h5 class="text-white text-base font-normal">
-                        <?php echo get_field('atuty_naglowek_2'); ?>
+                        <?php echo get_field('atuty_tytul_2'); ?>
                     </h5>
                     <p class="text-white text-xs">
                         <?php echo get_field('atuty_tekst_2'); ?>
@@ -65,7 +93,7 @@ get_header();
 
                 <div class="flex flex-col gap-1 justify-start items-start">
                     <h5 class="text-white text-base font-normal">
-                        <?php echo get_field('atuty_naglowek_3'); ?>
+                        <?php echo get_field('atuty_tytul_3'); ?>
                     </h5>
                     <p class="text-white text-xs">
                         <?php echo get_field('atuty_tekst_3'); ?>
@@ -79,7 +107,7 @@ get_header();
 
                 <div class="flex flex-col gap-1 justify-start items-start">
                     <h5 class="text-white text-base font-normal">
-                        <?php echo get_field('atuty_naglowek_4'); ?>
+                        <?php echo get_field('atuty_tytul_4'); ?>
                     </h5>
                     <p class="text-white text-xs">
                         <?php echo get_field('atuty_tekst_4'); ?>
@@ -88,14 +116,123 @@ get_header();
             </div>
         </div>
     </section>
+</div>
 
-    <!-- MONTAZ STOISKA -->
+<section class="w--middle py-12 lg:py-24">
+    <h3 class="flex justify-center items-center gap-6 uppercase text-black font-bold text-2xl lg:text-4xl mb-10">
+        <img class="w-6 h-auto" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/arrow-header.svg" alt="arrow" />
 
+        Montaż stoiska
+    </h3>
+
+    <div class="flex justify-between items-center gap-4 lg:gap-12 w--middle">
+        <button class="w-14 min-w-[24px] bg-transparent border-none" onclick="montagePrev()">
+            <img class="w-full" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/arrow-prev.svg" alt="prev" />
+        </button>
+
+        <div class="bg-[#0C0C0C] rounded-[20px] py-12 px-6">
+            <?php
+            $name = get_field('nazwa');
+            $i = 0;
+
+            $args = array(
+                'post_type' => 'Montaz',
+                'posts_per_page' => 150,
+                'meta_key' => 'krok',
+                'orderby' => 'meta_value',
+                'order' => 'ASC'
+            );
+
+            $query = new WP_Query($args);
+
+            if($query->have_posts()) {
+                while($query->have_posts()) {
+                    $query->the_post();
+
+                    $array = explode(" ", $name);
+
+                    if(get_field('stoisko') == end($array)) {
+                        ?>
+
+                        <div class="montage montage--<?php echo $i; ?> flex flex-col lg:flex-row justify-between gap-5 <?php if($i == 0) {
+                            echo 'relative';
+                        } else {
+                            echo 'absolute invisible';
+                        }?>">
+                            <div class="w-full lg:w-1/3 flex flex-col justify-between items-center lg:items-start">
+                                <div>
+                                    <h3 class="text-center lg:text-left text-white uppercase font-bold text-base lg:text-xl">
+                                        <?php echo get_field('krok'); ?>
+                                    </h3>
+                                    <h4 class="text-center lg:text-left text-white font-bold text-sm mt-4 mb-6">
+                                        <?php echo get_field('naglowek'); ?>
+                                    </h4>
+                                    <p class="text-center lg:text-left text-white text-sm">
+                                        <?php echo get_field('opis'); ?>
+                                    </p>
+                                </div>
+
+                                <div class="mt-8 lg:mt-24 flex justify-center lg:justify-start items-center gap-4">
+                                    <?php
+                                    $innerArgs = array(
+                                        'post_type' => 'Montaz',
+                                        'posts_per_page' => 150
+                                    );
+
+                                    $j = 0;
+                                    $innerQuery = new WP_Query($innerArgs);
+
+                                    if($innerQuery->have_posts()) {
+                                        while($innerQuery->have_posts()) {
+                                            $innerQuery->the_post();
+
+                                            $innerArray = explode(" ", $name);
+
+                                            if(get_field('stoisko') == end($innerArray)) {
+                                                ?>
+
+                                                <span class="block w-2 h-2 rounded-full <?php if($i == $j) {
+                                                    echo 'bg-[#d6f905]';
+                                                } else {
+                                                    echo 'bg-[#616161]';
+                                                }?>">
+
+                                                </span>
+
+                                                <?php
+                                                $j++;
+                                            }
+                                        }
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                            <div class="w-full lg:w-2/3 rounded-[20px] overflow-hidden">
+                                <img class="w-full" src="<?php echo get_field('zdjecie') ?>" alt="img" />
+                            </div>
+                        </div>
+
+                        <?php
+                        $i++;
+                    }
+                }
+                wp_reset_postdata();
+            }
+            ?>
+        </div>
+
+        <button class="w-14 min-w-[24px] bg-transparent border-none rotate-180" onclick="montageNext()">
+            <img class="w-full" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/arrow-prev.svg" alt="prev" />
+        </button>
+    </div>
+</section>
+
+<div class="w--narrow">
     <section class="py-12 lg:py-24">
         <h3 class="flex justify-center items-center gap-6 uppercase text-black font-bold text-2xl lg:text-4xl mb-10">
             <img class="w-6 h-auto" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/arrow-header.svg" alt="arrow" />
 
-            <?php echo get_field('naglowek_sekcja_5'); ?>
+            Realizacje
         </h3>
 
         <?php echo do_shortcode('[sp_wpcarousel id="31"]'); ?>
@@ -110,18 +247,18 @@ get_header();
         </div>
     </section>
 
-    <section class="">
+    <section class="my-24">
         <h3 class="flex justify-center items-center gap-6 uppercase text-black font-bold text-2xl lg:text-4xl mb-10">
             <img class="w-6 h-auto" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/arrow-header.svg" alt="arrow" />
 
             Cechy
         </h3>
 
-        <h4 class="mb-8">
+        <h4 class="mb-8 font-bold text-center">
             Najedź na kafelek i sprawdź właściwości modułu
         </h4>
 
-        <div class="bg-[#0C0C0C] rounded-[20px] p-4 lg:p-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div class="bg-[#0C0C0C] rounded-[20px] px-4 py-12 lg:px-12 lg:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-16 justify-items-center">
             <?php
             $name = get_field('nazwa');
 
@@ -141,14 +278,14 @@ get_header();
                     if(get_field('stoisko') == end($array)) {
                         ?>
 
-                        <div class="flex flex-col gap-3 relative group">
-                            <p class="hidden group-hover:block absolute -top-[10px] left-1/2 -translate-x-1/2">
+                        <div class="flex flex-col justify-start gap-3 relative max-w-[120px] group">
+                            <p class="hidden group-hover:block absolute -top-[10px] left-1/2 -translate-y-full -translate-x-1/2 bg-[#616161] text-white p-4 rounded-[8px] text-center">
                                 <?php echo get_field('tooltip'); ?>
                             </p>
 
                             <img class="" src="<?php echo get_field('ikona'); ?>" alt="img" />
 
-                            <p class="text-center uppercase">
+                            <p class="text-center text-white text-sm uppercase">
                                 <?php echo get_field('naglowek'); ?>
                             </p>
                         </div>

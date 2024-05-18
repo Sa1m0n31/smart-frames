@@ -22,39 +22,39 @@ get_header();
 <div class="w--middle flex flex-col justify-start items-center my-24">
     <h4 class="bg-[#0C0C0C] rounded-[20px] px-16 py-6 flex justify-center items-center mb-14">
         <span class="relative carousel-title"><?php echo get_field('karuzela_naglowek_1'); ?></span>
-        <span class="absolute carousel-title"><?php echo get_field('karuzela_naglowek_2'); ?></span>
-        <span class="absolute carousel-title"><?php echo get_field('karuzela_naglowek_3'); ?></span>
+        <span class="absolute invisible carousel-title"><?php echo get_field('karuzela_naglowek_2'); ?></span>
+        <span class="absolute invisible carousel-title"><?php echo get_field('karuzela_naglowek_3'); ?></span>
     </h4>
 
-    <div class="flex gap-8 justify-center items-center">
-        <button class="rounded-full w-3 h-3 bg-[#616161] carousel-dot carousel-dot-1"></button>
+    <div class="flex gap-8 justify-center items-center mb-4">
+        <button class="rounded-full w-3 h-3 bg-[#D6F905] border-2 border-[#0C0C0C] carousel-dot carousel-dot-1"></button>
         <button class="rounded-full w-3 h-3 bg-[#616161] carousel-dot carousel-dot-2"></button>
         <button class="rounded-full w-3 h-3 bg-[#616161] carousel-dot carousel-dot-2"></button>
     </div>
 
-    <div class="flex justify-between items-center gap-12 w--middle">
-        <button class="w-8 bg-transparent border-none" onclick="carouselPrev()">
+    <div class="flex justify-between items-center gap-4 lg:gap-12 w--middle">
+        <button class="w-14 min-w-[24px] bg-transparent border-none" onclick="carouselPrev()">
             <img class="w-full" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/arrow-prev.svg" alt="prev" />
         </button>
 
         <figure class="bg-[#0C0C0C] rounded-[20px] p-6">
             <img class="w-full h-auto relative carousel-image" src="<?php echo get_field('karuzela_1') ?>" alt="carousel" />
-            <img class="w-full h-auto absolute carousel-image" src="<?php echo get_field('karuzela_2') ?>" alt="carousel" />
-            <img class="w-full h-auto absolute carousel-image" src="<?php echo get_field('karuzela_3') ?>" alt="carousel" />
+            <img class="w-full h-auto absolute invisible carousel-image" src="<?php echo get_field('karuzela_2') ?>" alt="carousel" />
+            <img class="w-full h-auto absolute invisible carousel-image" src="<?php echo get_field('karuzela_3') ?>" alt="carousel" />
         </figure>
 
-        <button class="w-8 bg-transparent border-none rotate-180" onclick="carouselNext()">
+        <button class="w-14 min-w-[24px] bg-transparent border-none rotate-180" onclick="carouselNext()">
             <img class="w-full" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/arrow-prev.svg" alt="prev" />
         </button>
     </div>
 </div>
 
-<div class="w-narrow">
+<div class="w--narrow">
     <section class="py-12 lg:py-24" id="mobilnosc">
         <h3 class="flex justify-center items-center gap-6 uppercase text-black font-bold text-2xl lg:text-4xl mb-10">
             <img class="w-6 h-auto" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/arrow-header.svg" alt="arrow" />
 
-            <?php echo get_field('naglowek_sekcja_2'); ?>
+            Zalety
         </h3>
 
         <div class="mt-12 lg:mt-20 bg-black mx-auto max-w-[400px] lg:max-w-none rounded-2xl py-12 px-6 flex flex-col lg:flex-row justify-between items-center gap-8">
@@ -62,26 +62,26 @@ get_header();
                 <div class="flex flex-col gap-2">
                     <button class="border-b border-[#616161] py-3 w-full cursor-default">
                             <span class="mobility--header text-lg font-bold text-[#616161] pb-2">
-                                <?php echo get_field('mobilnosc_naglowek_1'); ?>
+                                <?php echo get_field('mobilnosc_naglowek_1', 10); ?>
                             </span>
                         <span class="mobility--description pt-1 text-sm text-white">
-                                <?php echo get_field('mobilnosc_tekst_1'); ?>
+                                <?php echo get_field('mobilnosc_tekst_1', 10); ?>
                             </span>
                     </button>
                     <button class="border-b border-[#616161] py-3 w-full cursor-default">
                             <span class="mobility--header text-lg font-bold text-[#616161] pb-2">
-                                <?php echo get_field('mobilnosc_naglowek_2'); ?>
+                                <?php echo get_field('mobilnosc_naglowek_2', 10); ?>
                             </span>
                         <span class="mobility--description pt-1 text-sm text-white">
-                                <?php echo get_field('mobilnosc_tekst_2'); ?>
+                                <?php echo get_field('mobilnosc_tekst_2', 10); ?>
                             </span>
                     </button>
                     <button class="border-b border-[#616161] py-3 w-full cursor-default">
                             <span class="mobility--header text-lg font-bold text-[#616161] pb-2">
-                                <?php echo get_field('mobilnosc_naglowek_3'); ?>
+                                <?php echo get_field('mobilnosc_naglowek_3', 10); ?>
                             </span>
                         <span class="mobility--description pt-1 text-sm text-white">
-                                <?php echo get_field('mobilnosc_tekst_3'); ?>
+                                <?php echo get_field('mobilnosc_tekst_3', 10); ?>
                             </span>
                     </button>
                 </div>
@@ -108,7 +108,7 @@ get_header();
     </section>
 
     <section class="py-12 lg:py-24" id="mobilnosc">
-        <h3 class="flex justify-center items-center gap-6 uppercase text-black font-bold text-2xl lg:text-4xl mb-10">
+        <h3 class="flex justify-center items-center gap-6 uppercase text-black font-bold text-2xl lg:text-4xl mb-2">
             <img class="w-6 h-auto" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/arrow-header.svg" alt="arrow" />
 
             Profile
@@ -117,8 +117,124 @@ get_header();
             Aluminiowe do ram ściennych
         </h4>
 
-        <div class="flex flex-col lg:flex-row gap-4 justify-between items-start">
+        <div class="flex flex-col lg:flex-row gap-4 justify-center items-center mt-12 max-w-[1100px]">
+            <?php
+            $args = array(
+                'post_type' => 'Profile',
+                'posts_per_page' => 5
+            );
 
+            $pageName = get_the_title();
+
+            $query = new WP_Query($args);
+
+            if($query->have_posts()) {
+                $i = 1;
+
+                while($query->have_posts()) {
+                    $query->the_post();
+                    if(get_field('ramy') == $pageName) {
+                        ?>
+
+                        <!-- Popup -->
+                        <div class="profilePopup modal modal--transparent modal--<?php echo $i; ?>">
+                            <div class="w-[90%] max-w-[1400px] rounded-[20px] relative p-8 md:p-20 modal__inner">
+                                <button onclick="closePopup()"
+                                        class="text-white font-bold text-2xl lg:text-6xl absolute top-2 right-4 bg-transparent">
+                                    &times;
+                                </button>
+
+                                <div class="flex justify-between items-center">
+                                    <div class="w-full md:w-1/3">
+                                        <h4 class="text-white font-bold text-xl mb-6">
+                                            <?php echo get_field('tytul'); ?>
+                                        </h4>
+
+                                        <div class="text-white text-sm mb-6">
+                                            <?php echo get_field('content'); ?>
+                                        </div>
+
+                                        <div class="flex flex-col md:flex-row justify-start items-start gap-6">
+                                            <div>
+                                                <a href="<?php echo get_field('specyfikacja'); ?>"
+                                                   class="text-white text-xs block">
+                                                    Specyfikacja >
+                                                </a>
+                                                <a href="<?php echo get_field('karta_katalogowa'); ?>"
+                                                   class="text-white text-xs block">
+                                                    Karta katalogowa >
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <a href="<?php echo get_field('instrukcja'); ?>"
+                                                   class="text-white text-xs block">
+                                                    Instrukcja >
+                                                </a>
+                                                <a href="<?php echo get_field('przekroj_profilu'); ?>"
+                                                   class="text-white text-xs block">
+                                                    Przekrój profilu >
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hidden md:flex w-2/3 gap-8 justify-between items-center">
+                                        <div class="w-1/2 flex flex-col gap-4 justify-center items-center">
+                                            <h4 class="text-white text-center relative uppercase font-bold text-sm">
+                                                <span class="popupCarouselHeader relative"><?php echo get_field('karuzela_naglowek_1'); ?></span>
+                                                <span class="popupCarouselHeader absolute invisible"><?php echo get_field('karuzela_naglowek_2'); ?></span>
+                                                <span class="popupCarouselHeader absolute invisible"><?php echo get_field('karuzela_naglowek_3'); ?></span>
+                                            </h4>
+
+                                            <figure class="relative">
+                                                <img class="popupCarouselImage relative" src="<?php echo get_field('karuzela_zdjecie_1'); ?>" alt="img" />
+                                                <img class="popupCarouselImage absolute invisible" src="<?php echo get_field('karuzela_zdjecie_2'); ?>" alt="img" />
+                                                <img class="popupCarouselImage absolute invisible" src="<?php echo get_field('karuzela_zdjecie_3'); ?>" alt="img" />
+                                            </figure>
+
+                                            <div class="flex justify-center items-center gap-5">
+                                                <button class="popupCarouselDot w-4 h-4 rounded-full bg-[#d6f905]" onclick="changePopupCarousel(0)"></button>
+                                                <button class="popupCarouselDot w-4 h-4 rounded-full bg-white" onclick="changePopupCarousel(1)"></button>
+                                                <button class="popupCarouselDot w-4 h-4 rounded-full bg-white" onclick="changePopupCarousel(2)"></button>
+                                            </div>
+                                        </div>
+
+                                        <figure class="w-1/2">
+                                            <img class="w-full" src="<?php echo get_field('zdjecie_2'); ?>" alt="img" />
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tile -->
+                        <div onclick="displayPopup(<?php echo $i; ?>)"
+                             class="bg-black rounded-2xl p-4 tile max-w-[240px] cursor-pointer">
+                            <div class="flex justify-between items-center">
+                                <span class="rounded-full w-10 h-10 bg-[#21221C] text-white flex justify-center items-center text-xl">
+                                    <?php echo $i; ?>
+                                </span>
+
+                                <img class="w-10 h-10" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/arrow-up-green.svg" alt="up" />
+                            </div>
+
+                            <h4 class="text-white text-sm font-bold text-lg mt-4 mb-2">
+                                <?php echo get_field('tytul'); ?>
+                            </h4>
+
+                            <p class="text-white text-xs">
+                                <?php echo get_field('tekst'); ?>
+                            </p>
+
+                            <img class="w-full mt-8" src="<?php echo get_field('zdjecie'); ?>" alt="ramki" />
+                        </div>
+
+                        <?php
+                        $i++;
+                    }
+                }
+                wp_reset_postdata();
+            }
+            ?>
         </div>
     </section>
 </div>

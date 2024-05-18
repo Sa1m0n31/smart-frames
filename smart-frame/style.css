@@ -61,6 +61,10 @@ button, a {
 	width: 100%;
 }
 
+body {
+	overflow-x: hidden;
+}
+
 .flex {
 	display: flex;
 	justify-content: space-between;
@@ -89,6 +93,7 @@ button, a {
 }
 
 .w--middle {
+	overflow: hidden !important;
 	width: 1050px;
 	max-width: 82vw;
 	margin-left: auto;
@@ -1429,6 +1434,14 @@ label > span {
 	background: rgba(0, 0, 0, .6);
 }
 
+.modal--transparent {
+	background: transparent;
+}
+
+.modal__inner {
+	background: rgba(0, 0, 0, .95);
+}
+
 .lgPicker * {
 	color: #fff !important;
 	font-weight: 700 !important;
@@ -1493,11 +1506,17 @@ label > span {
 
 .carousel-title {
 	color: white;
-	font-size: 24px;
+	font-size: 21px;
 	font-weight: 700;
 	text-align: center;
 }
 
 .absolute-carousel-title {
 	visibility: hidden;
+}
+
+@media(max-width: 756px) {
+	.carousel-title {
+		font-size: 14px;
+	}
 }
